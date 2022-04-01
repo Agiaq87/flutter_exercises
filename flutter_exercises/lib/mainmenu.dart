@@ -31,7 +31,8 @@ class Mainmenu extends StatelessWidget {
                                 child: const Text('CLOSE'))
                           ],
                         );
-                      });
+                      }
+                    );
                 },
               ),
               AlertListTile(
@@ -40,9 +41,23 @@ class Mainmenu extends StatelessWidget {
                   const Text('Tap to open a alert dialog'),
                   'AlertDialog22',
                   'My widget work',
-                  'YUPPIE')
+                  'YUPPIE'),
+              ListTile(
+                leading: const Icon(Icons.warning_amber_outlined),
+                title: const Text('Snackbar'),
+                subtitle: const Text('Tap to open snackbar'),
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                        content: Text('This is a snackbar')
+                    )
+                  );
+                },
+              )
             ],
-          ))),
+          )
+        )
+      ),
     );
   }
 }
